@@ -26,3 +26,9 @@ variable "os_region" {
   type        = string
   default     = "RegionOne"
 }
+
+variable "cidr_mgmt" {
+  description = "CIDR for the management network"
+  type        = string
+  default     = "192.168.0.0/24"
+}
