@@ -5,6 +5,15 @@ terraform {
       source  = "terraform-provider-openstack/openstack"
       version = "~> 3.0.0"
     }
+
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "4.49.1"
+    }
+
+    random = {
+      source = "hashicorp/random"
+    }
   }
 }
 
@@ -14,4 +23,11 @@ provider "openstack" {
   password    = var.os_password
   auth_url    = var.os_auth_url
   region      = var.os_region
+}
+
+provider "cloudflare" {
+  api_token = var.cloudflare_token
+}
+
+provider "random" {
 }

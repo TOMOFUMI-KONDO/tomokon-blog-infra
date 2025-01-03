@@ -36,7 +36,7 @@ data "cloudflare_zone" "main" {
   name = var.cloudflare_zone_name
 }
 
-resource "cloudflare_record" "example" {
+resource "cloudflare_record" "main" {
   zone_id = data.cloudflare_zone.main.zone_id
   name    = var.subdomain
   content = "${cloudflare_zero_trust_tunnel_cloudflared.main.id}.cfargotunnel.com"
